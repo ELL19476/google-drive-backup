@@ -8,3 +8,5 @@ waitress
 sanitize_filename
 zipfile36
 markdown
+beautifulsoup4
+langchain

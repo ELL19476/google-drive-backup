@@ -20,8 +20,7 @@ def index():
 def submit():
     global submitForm
     submitForm = request.form.to_dict()
-    # print(request.form.get('backup-folder'))
-    # print(request.form.get("exclude-drives"))
+    submitForm["exclude-drives"] = request.form.getlist("exclude-drives")
 
     # close browser soon
     global closeBrowserThread
@@ -75,6 +74,7 @@ def main(driveList = None):
     openBrowserThread = threading.Thread(target = openBrowser, args = ())
 
     global server
+    global submitForm
     server = ServerThread()
     openBrowserThread.start()
     server.start()

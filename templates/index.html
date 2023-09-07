@@ -6,20 +6,7 @@
         <hr>
         <form method="post" class="mb-5" action="/submit">
             <div class="mb-3">
-                <label for="backup-folder" class="h3">New Backup Folder</label>
-                <div class="input-group mb-1">
-                    <div class="input-group-prepend pe-1">
-                      <span class="input-group-text h-100" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
-                        <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
-                      </svg></span>
-                    </div>
-                    <input name="backup-folder" id="backup-folder" type="text" class="form-control rounded-2" aria-label="Backup Folder" aria-describedby="backup-folder-desc" required>
-                </div>
-                <span id="backup-folder-desc" class="text-muted">The directory where you want to save the new backup to. <strong>Will be saved into program directory, if left empty.</strong></span>
-            </div>
-            <hr>
-            <div class="mb-3">
-                <label for="exclude-drives" class="h3">Drives to exclude from Backup</label>
+                <label for="exclude-drives" class="h3">Drives to exclude from download</label>
                 <select name="exclude-drives" class="form-select form-control" multiple id="exclude-drives">
                     {% if drives is defined and drives is not none and drives|length %}
                          {% for item in drives %}  
@@ -30,8 +17,13 @@
                   <span id="exclude-drives-desc" class="text-muted">Select drives that should <strong>not</strong> be backed up. Press "Shift" or drag to bulk-select. Press "command"/"ctrl" to select and deselect multiple rows.</span>
             </div>
             <div class="col-12 d-flex justify-content-end">
-                <button class="btn btn-primary" type="submit">Submit & Start Backup</button>
+                <button class="btn btn-primary" type="submit">Submit & Start download</button>
             </div>
         </form>
 </div>
+<script type=text/javascript>
+  function onToggle() {
+    
+  }
+</script>
 {% endblock %}
