@@ -1,5 +1,6 @@
 import os, sys
 from colors import color
+import json
 
 # Disable
 def blockPrint():
@@ -49,10 +50,20 @@ def main():
     
     metadata = [{"title": sec["headers"][0] if len(sec["headers"]) > 0 else "", "section": ": ".join(sec["headers"][1:]), "source": sec["link"]} for sec in sections]
     documents = text_splitter.create_documents(texts, metadata)
+    # save
+    print('*' * 50)
+    print(f"{color.GREEN}{color.BOLD}Saving documents...{color.END}")
     # write to file
     print('*' * 50)
     print(f"{color.GREEN}{color.BOLD}Success.{color.END}\nReturning document tree.")
-    return text_splitter.split_documents(documents)
+    # return text_splitter.split_documents(documents)
+    # TEMP
+    textFile = open("text.json", "w")
+    textFile.write(json.dumps(texts))
+    textFile.close()
+    metadataFile = open("metadata.json", "w")
+    metadataFile.write(json.dumps(metadata))
+    metadataFile.close()
 
 class Options:
     link = None

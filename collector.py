@@ -32,9 +32,9 @@ def exportFile(item):
             global docs_service
             if not docs_service:
                 docs_service = data_parser.create_docs_service()
-            print(f"{color.PURPLE}{color.BOLD}Parsing document: {get_uname(item)}{color.END}\n{color.ITALIC}This may take a few seconds...{color.END}")
+            # print(f"{color.PURPLE}{color.BOLD}Parsing document: {get_uname(item)}{color.END}\n{color.ITALIC}This may take a few seconds...{color.END}")
             DATA.extend(data_parser.parse_doc(item["id"], docs_service))
-            print("Done!\n")
+            # print("Done!\n")
 
 # Search for files in a specific drive
 def listfiles(driveID = None, fileIDs = None):

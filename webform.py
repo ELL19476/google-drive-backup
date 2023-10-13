@@ -85,7 +85,5 @@ def main(driveList = None):
     print('*' * 50)
     return submitForm
 
-
-
 if __name__ == "__main__":
     main()
